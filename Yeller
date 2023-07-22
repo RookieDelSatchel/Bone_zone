@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flashing Text</title>
+<style>
+#message {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 20%;
+}
+</style>
+</head>
+<body>
+<div id="message">learned it</div>
+<script>
+var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+var messageElement = document.getElementById('message');
+setInterval(function() {
+  var color = colors[Math.floor(Math.random() * colors.length)];
+  messageElement.style.color = color;
+}, 1000);
+</script>
+</body>
+</html>
