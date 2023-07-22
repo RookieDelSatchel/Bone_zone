@@ -7,18 +7,38 @@
   font-size: 2em;
   text-align: center;
   margin-top: 20%;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+
+.fadeOut {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
 }
 </style>
 </head>
 <body>
-<div id="message">CYBERMAN</div>
+<div id="message">hey dylan you free sunday</div>
 <script>
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var messageElement = document.getElementById('message');
-setInterval(function() {
+
+function changeColor() {
   var color = colors[Math.floor(Math.random() * colors.length)];
   messageElement.style.color = color;
-}, 1000);
+}
+
+function _changeText() {
+  messageElement.className = "fadeOut";
+  setTimeout(function() {
+    messageElement.className = "";
+    changeColor();
+  }, 1000);
+}
+
+setInterval(_changeText, 2000);
 </script>
 </body>
 </html>
